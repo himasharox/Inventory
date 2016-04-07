@@ -63,7 +63,7 @@ public class TestFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(this, "HI");
         JOptionPane.showMessageDialog(this, "SU");
-        JOptionPane.showMessageDialog(this, "Fucku");
+        JOptionPane.showMessageDialog(this, "Fucku");        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
