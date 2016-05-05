@@ -5,6 +5,8 @@
  */
 package inventory;
 
+import frames.FirstFrame;
+
 /**
  *
  * @author hrox
@@ -15,7 +17,9 @@ public class Inventory {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        FirstFrame f = new FirstFrame();
+        f.setLocationRelativeTo(null);
+        f.setVisible(true);
     }
     
 }

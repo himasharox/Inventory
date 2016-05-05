@@ -5,18 +5,21 @@
  */
 package frames;
 
-import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+import utilities.Appearence;
 
 /**
  *
- * @author Enrich Arcane 002
+ * @author hrox
  */
-public class TestFrame extends javax.swing.JFrame {
+public class FirstFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form TestFrame
+     * Creates new form FirstFrame
      */
-    public TestFrame() {
+    public FirstFrame() {
+        
+        Appearence.commonAppearence();
         initComponents();
     }
 
@@ -45,25 +48,30 @@ public class TestFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(167, Short.MAX_VALUE)
+                .addContainerGap(172, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(152, 152, 152))
+                .addGap(147, 147, 147))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(95, 95, 95)
                 .addComponent(jButton1)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(this, "HI");
-        JOptionPane.showMessageDialog(this, "SU");
-        JOptionPane.showMessageDialog(this, "Fucku");        
+        MainFrame f = new MainFrame();
+        this.dispose();
+        f.setLocationRelativeTo(null);
+        f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        f.setVisible(true);
+
+        //JOptionPane.showMessageDialog(this, "Message","ABC",JOptionPane.ERROR_MESSAGE);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -83,20 +91,20 @@ public class TestFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TestFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FirstFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TestFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FirstFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TestFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FirstFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TestFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FirstFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TestFrame().setVisible(true);
+                new FirstFrame().setVisible(true);
             }
         });
     }
