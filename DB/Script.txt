@@ -1,0 +1,36 @@
+
+CREATE TABLE EmployeeMaster(
+	empId INTEGER PRIMARY KEY,
+	epfNo TEXT,
+	etfNo TEXT,
+	firstAppointmentDate TEXT,
+	isPermanent INTEGER,
+	isPaid INTEGER,
+	isMonthly INTEGER,
+	empName TEXT,
+	nic TEXT,
+	gender TEXT,
+	dob TEXT,
+	isMarried INTEGER,
+	address1 TEXT,
+	address2 TEXT,
+	address3 TEXT,
+	contact1 TEXT,
+	contact2 TEXT,
+	contact3 TEXT,
+	guardianName TEXT,
+	guardianRelation TEXT,
+	guardianContact TEXT,
+	citizenship TEXT,
+	passportNo TEXT,
+	passportExpiratonDate TEXT,
+	isActive INTEGER
+)
+
+CREATE TABLE UserMaster(
+	username TEXT,
+	password TEXT,
+	userType TEXT,
+	loggedIn INTEGER,
+	isActive INTEGER
+)

@@ -11,6 +11,6 @@ package utilities;
  */
 public class Global {
     
-    static String dbName;
+    public static String loggedInUser;
     
 }

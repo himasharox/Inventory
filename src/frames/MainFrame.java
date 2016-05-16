@@ -5,6 +5,11 @@
  */
 package frames;
 
+import dbaccess.DBUpdater;
+import frames.internal.EmployeeMaster;
+import javax.swing.JOptionPane;
+import utilities.Global;
+import utilities.OtherUtilities;
 
 /**
  *
@@ -16,7 +21,8 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public MainFrame() {
-        
+
+        setUndecorated(true);
         initComponents();
         //jDesktopPane1.setSize(this.getContentPane().getSize());
     }
@@ -38,6 +44,8 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,19 +57,30 @@ public class MainFrame extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 578, Short.MAX_VALUE)
+            .addGap(0, 554, Short.MAX_VALUE)
         );
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconFile.jpg"))); // NOI18N
         jMenu1.setText("File");
+        jMenu1.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jMenu1.setIconTextGap(10);
 
         jMenuItem1.setText("Log Out");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconMaster.jpg"))); // NOI18N
         jMenu2.setText("Master");
+        jMenu2.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jMenu2.setIconTextGap(10);
 
-        jMenuItem2.setText("jMenuItem2");
+        jMenuItem2.setText("Employee Details");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -71,11 +90,30 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconSale.jpg"))); // NOI18N
         jMenu3.setText("Sales");
+        jMenu3.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jMenu3.setIconTextGap(10);
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconPurchase.jpg"))); // NOI18N
         jMenu4.setText("Purchases");
+        jMenu4.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jMenu4.setIconTextGap(10);
         jMenuBar1.add(jMenu4);
+
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconReports.jpg"))); // NOI18N
+        jMenu5.setText("Reports");
+        jMenu5.setToolTipText("");
+        jMenu5.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jMenu5.setIconTextGap(10);
+        jMenuBar1.add(jMenu5);
+
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconAdmin.jpg"))); // NOI18N
+        jMenu6.setText("Admin");
+        jMenu6.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jMenu6.setIconTextGap(10);
+        jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
 
@@ -94,9 +132,28 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-//        TestFrame f = new TestFrame();
-//        f.setVisible(true);
+        EmployeeMaster f = new EmployeeMaster(jDesktopPane1);
+        OtherUtilities.displayInternalFrame(f, jDesktopPane1);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "Are You Sure ???", "Exit Confirmation", JOptionPane.YES_NO_OPTION);
+
+        if (i == 0) {
+            boolean userLogoutUpdated = DBUpdater.updateUserLogin(Global.loggedInUser, 0);
+
+            if (userLogoutUpdated) {
+                JOptionPane.showMessageDialog(this, "Successfully Logged Out " + Global.loggedInUser + " !!!");
+
+                UserLogin f = new UserLogin();
+                this.dispose();
+                f.setLocationRelativeTo(null);
+                f.setResizable(false);
+                f.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,6 +196,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
