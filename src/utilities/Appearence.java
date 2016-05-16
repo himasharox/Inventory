@@ -5,8 +5,7 @@
  */
 package utilities;
 
-import de.javasoft.plaf.synthetica.SyntheticaBlueMoonLookAndFeel;
-import de.javasoft.plaf.synthetica.SyntheticaSilverMoonLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaWhiteVisionLookAndFeel;
 import javax.swing.UIManager;
 
 /**
@@ -17,7 +16,7 @@ public class Appearence {
 
     public static void commonAppearence() {
         try {
-            UIManager.setLookAndFeel(new SyntheticaBlueMoonLookAndFeel());
+            UIManager.setLookAndFeel(new SyntheticaWhiteVisionLookAndFeel());
         } catch (Exception e) {
             e.printStackTrace();
         }

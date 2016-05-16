@@ -18,7 +18,7 @@ public class FirstFrame extends javax.swing.JFrame {
      * Creates new form FirstFrame
      */
     public FirstFrame() {
-        
+
         Appearence.commonAppearence();
         initComponents();
     }
@@ -64,13 +64,11 @@ public class FirstFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        MainFrame f = new MainFrame();
+        UserLogin f = new UserLogin();
         this.dispose();
         f.setLocationRelativeTo(null);
-        f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        f.setResizable(false);
         f.setVisible(true);
-
-        //JOptionPane.showMessageDialog(this, "Message","ABC",JOptionPane.ERROR_MESSAGE);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
